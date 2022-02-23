@@ -1,0 +1,17 @@
+.container {
+  display: grid;
+  grid-auto-columns: 1fr;
+  min-height: 100%;
+}
+
+@media screen and (min-width: 768px) {
+  .container {
+    grid-auto-columns: 0.9fr;
+  }
+}
+
+@media screen and (min-width: 1920px) {
+  .container {
+    grid-auto-columns: 0.7fr;
+  }
+}

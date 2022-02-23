@@ -1,0 +1,54 @@
+.grid {
+  display: grid; 
+  grid-auto-columns: 1fr; 
+  grid-template-columns: 0.7fr 1.3fr; 
+  gap: 2.5vh 2.5vw; 
+  grid-template-rows: auto 1fr 70px; 
+  grid-template-areas: 
+    "aside header"
+    "main main"
+    "footer footer"; 
+  min-height: 100%;
+}
+
+.header {
+  grid-area: header;
+}
+
+.aside {
+  grid-area: aside;
+  background: #d0d7de;
+  padding-right: 2vw;
+  position: relative;
+}
+
+.aside::after {
+  content: '';
+  position: absolute;
+  bottom: -1px;
+  width: 100vw;
+  height: 1px;
+  background: #d0d7de;
+}
+
+.footer {
+  grid-area: footer;
+}
+
+.main {
+  grid-area: main;
+}
+
+@media screen and (min-width: 768px) {
+  .grid {
+    grid-template-rows: 70px 1fr 70px; 
+    grid-template-areas: 
+      "aside header"
+      "aside main"
+      "aside footer";
+  }
+
+  .aside::after {
+    content: none;
+  }
+}
