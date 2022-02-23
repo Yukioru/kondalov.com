@@ -47,5 +47,5 @@ jobs:
           key: ${{ secrets.SSH_KEY }}
           passphrase: ${{ secrets.SSH_PASSPHRASE }}
           script: |
-            sudo docker-compose -f kondalov.com/docker-compose.yml pull
-            sudo docker-compose -f kondalov.com/docker-compose.yml up -d
+            docker-compose -f kondalov.com/docker-compose.yml pull
+            docker-compose -f kondalov.com/docker-compose.yml up -d
