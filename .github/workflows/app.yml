@@ -47,5 +47,6 @@ jobs:
           key: ${{ secrets.SSH_KEY }}
           passphrase: ${{ secrets.SSH_PASSPHRASE }}
           script: |
+            docker login --username ${{ secrets.DOCKER_HUB_USERNAME }} --password ${{ secrets.DOCKER_HUB_ACCESS_TOKEN }}
             docker-compose -f kondalov.com/docker-compose.yml pull
             docker-compose -f kondalov.com/docker-compose.yml up -d
